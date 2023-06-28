@@ -1,0 +1,51 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+    steps:
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.9"
+
+      - name: Prepare Linux
+        if: ${{ runner.os == 'Linux' }}
+        run: >
+          sudo apt-get install -y \
+              libgl1-mesa-dev \
+              libgl1-mesa-glx \
+              libglew-dev \
+              libosmesa6-dev \
+              software-properties-common
+          sudo apt-get install -y patchelf
+      - name: Prepare macOS
+        if: ${{ runner.os == 'macOS' }}
+        run: brew install gcc@9
+
+      - shell: bash
+        run: |
+          pip install mujoco
+          python -m mujoco.render_test
