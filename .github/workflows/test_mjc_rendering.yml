@@ -39,7 +39,8 @@ jobs:
         uses: coactions/setup-xvfb@v1
         with:
           run: npm test
-
+          working-directory: ./ #optional
+         
       - name: Prepare Linux
         if: ${{ runner.os == 'Linux' }}
         run: |
