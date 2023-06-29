@@ -53,5 +53,4 @@ jobs:
       - shell: bash
         run: |
           pip install mujoco
-          export MUJOCO_GL=glfw
           python -m mujoco.render_test
