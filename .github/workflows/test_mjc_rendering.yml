@@ -34,12 +34,6 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: "3.9"
-          
-      - name: Run headless test
-        uses: coactions/setup-xvfb@v1
-        with:
-          run: npm test
-          working-directory: ./ #optional
          
       - name: Prepare Linux
         if: ${{ runner.os == 'Linux' }}
@@ -52,6 +46,7 @@ jobs:
               libosmesa6-dev \
               software-properties-common
           sudo apt-get install -y patchelf
+          sudo apt-get install -y xvfb x11-xserver-utils
 
 #       - name: "Setup env vars: osmesa"
 #         run: echo "Test osmesa"
