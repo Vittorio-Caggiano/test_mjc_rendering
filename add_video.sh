@@ -1,11 +1,13 @@
 #!/bin/bash
 
 set -e
-CREATE_DISPLAY=4
-# Use CREATE_DISPLAY env variable or default to 4 
-CREATE_ID=${CREATE_DISPLAY:-4}
+# CREATE_DISPLAY=4
+# # Use CREATE_DISPLAY env variable or default to 4 
+# CREATE_ID=${CREATE_DISPLAY:-4}
 
-echo "CREATE_DISPLAY: ${CREATE_DISPLAY} | CREATE_ID: ${CREATE_ID}"
+# echo "CREATE_DISPLAY: ${CREATE_DISPLAY} | CREATE_ID: ${CREATE_ID}"
+
+CREATE_ID=0
 
 # Let Xvfb create the display
 Xvfb :${CREATE_ID} &
