@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-
+CREATE_DISPLAY=4
 # Use CREATE_DISPLAY env variable or default to 4 
 CREATE_ID=${CREATE_DISPLAY:-4}
 
