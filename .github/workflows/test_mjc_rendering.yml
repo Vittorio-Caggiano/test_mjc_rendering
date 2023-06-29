@@ -19,8 +19,8 @@ jobs:
     strategy:
       matrix:
         os:
-          - ubuntu-latest
-#           - macos-latest
+#           - ubuntu-latest
+          - macos-latest
 #           - windows-latest
     steps:
       - name: Set up Python 3.9
@@ -53,4 +53,5 @@ jobs:
       - shell: bash
         run: |
           pip install mujoco
+          export MUJOCO_GL=glfw
           python -m mujoco.render_test
