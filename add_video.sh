@@ -7,7 +7,7 @@ set -e
 
 # echo "CREATE_DISPLAY: ${CREATE_DISPLAY} | CREATE_ID: ${CREATE_ID}"
 
-CREATE_ID="1"
+CREATE_ID="10"
 
 # Let Xvfb create the display
 Xvfb :${CREATE_ID} &
