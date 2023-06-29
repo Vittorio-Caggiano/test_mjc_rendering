@@ -42,12 +42,12 @@ jobs:
       - name: "Setup env vars: osmesa"
         run: echo "Test osmesa"
         env:
-          MUJOCO_GL: "osmesa"
+          MUJOCO_GL: osmesa
 
       - name: "Setup env vars: EGL"
         run: echo "Test EGL"
         env:
-          MUJOCO_GL: "EGL"
+          MUJOCO_GL: EGL
 
       - shell: bash
         run: |
