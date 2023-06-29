@@ -60,11 +60,11 @@ jobs:
 #         run: echo "Test EGL"
 #         env:
 #           MUJOCO_GL: EGL
-      - name: Prepare Linux
-        run: |
-          sh add_video.sh
+#       - name: Prepare Linux
+#         run: |
+#           sh add_video.sh
 
-      - name: Prepare Linux
+      - name: Install mujoco and test rendering
         run: |
           pip install mujoco
           python -m mujoco.render_test
