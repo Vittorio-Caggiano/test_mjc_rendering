@@ -69,5 +69,5 @@ jobs:
 
       - name: Install mujoco and test rendering
         run: |
-          pip install mujoco
-          python -m mujoco.render_test
+          pip3 install mujoco
+          python3 -m mujoco.render_test
