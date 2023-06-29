@@ -16,6 +16,9 @@ on:
 jobs:
   build:
     defaults:
+      env:
+        DISPLAY: :0
+    
       run:
         shell: bash -l {0}
   
