@@ -65,6 +65,7 @@ jobs:
 
       - name: Test MyoSuite
         run: |
+          python3 -m pip install --upgrade pip
           pip3 install h5py --only-binary h5py
           pip3 install git+https://github.com/facebookresearch/myosuite.git@dev
           python3 -m myosuite.tests.test_myo
