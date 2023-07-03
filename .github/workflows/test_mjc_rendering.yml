@@ -65,6 +65,7 @@ jobs:
 
       - name: Install mujoco and test rendering
         run: |
+          pip3 install h5py --only-binary h5py
           pip3 install mujoco
           python3 -c "import mujoco"
 #         python3 -m mujoco.render_test
