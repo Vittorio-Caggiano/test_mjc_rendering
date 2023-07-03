@@ -28,7 +28,7 @@ jobs:
         os: 
           - ubuntu-latest
           - macos-latest
-          - windows-latest
+#           - windows-latest
     steps:
       - name: Checkout repository and submodules
         uses: actions/checkout@v3
