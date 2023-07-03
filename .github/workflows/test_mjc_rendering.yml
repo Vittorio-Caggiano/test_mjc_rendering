@@ -63,11 +63,14 @@ jobs:
 #         run: |
 #           sh add_video.sh
 
-      - name: Install mujoco and test rendering
+      - name: Test MyoSuite
         run: |
           pip3 install h5py --only-binary h5py
-          pip install git+https://github.com/facebookresearch/myosuite.git@dev
-          python -m myosuite.tests.test_myo
+          pip3 install git+https://github.com/facebookresearch/myosuite.git@dev
+          python3 -m myosuite.tests.test_myo
+
+      - name: Install mujoco and test rendering
+        run: |
           pip3 install mujoco
           python3 -c "import mujoco"
 #         python3 -m mujoco.render_test
